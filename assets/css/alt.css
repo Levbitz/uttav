@@ -1,0 +1,143 @@
+:root {
+  --blue: #007bff;
+  --indigo: #6610f2;
+  --purple: #6f42c1;
+  --pink: #e83e8c;
+  --red: #dc3545;
+  --orange: #fd7e14;
+  --yellow: #ffc107;
+  --green: #28a745;
+  --teal: #20c997;
+  --cyan: #17a2b8;
+  --white: #fff;
+  --gray: #6c757d;
+  --gray-dark: #343a40;
+  --primary: #f42a2a;
+  --secondary: #f8b195;
+  --success: #28a745;
+  --info: #17a2b8;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --light: #f8f9fa;
+  --dark: #343a40;
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+}
+
+.home-services {
+  /* z-index: 10;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 300;
+  margin: 0 auto;
+  bottom: 5%; */
+}
+
+.lb_categorybox {
+  padding: 20px 40px;
+  transition: all 0.5s ease 0s;
+  border-radius: 8px;
+  /* box-shadow: 0 25px 98px 0 rgba(216, 11, 11, 0.5); */
+  background-color: var(--bg-color);
+  position: relative;
+  margin: 15px 0px;
+}
+
+.box-wrap-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-gap: 30 px;
+}
+
+.lb_categorybox .icon {
+  width: 70px;
+  height: 70px;
+  margin: auto;
+  text-align: center;
+  background: var(--bg-grey);
+  border-radius: var(--border-radius);
+  transition: 0.3s ease-in-out;
+  margin-right: 20px;
+}
+
+.lb_categorybox .icon span.fa {
+  color: var(--primary-color);
+  font-size: 25px;
+  line-height: 70px;
+}
+
+.box-wrap h4 a {
+  font-size: 24px;
+  font-weight: 600;
+  margin-top: 5px;
+  margin-bottom: 0px;
+  display: block;
+  color: var(--heading-color);
+}
+
+/* regisrtation page css start */
+.lb_registration_wrapper {
+  width: 75%;
+  margin: 0 auto;
+}
+.w3l-price-2 .toggler--is-active {
+  color: #ddd;
+  background: #333;
+  box-shadow: 0 2px 22px 0 rgb(0 0 0 / 5%);
+}
+.register-block .w3l-forms-31-right {
+  max-width: 700 px;
+  margin: auto;
+}
+.register-block .w3l-forms-31-right h3 {
+  font-weight: 300;
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 30 px;
+  color: var(--heading-color);
+}
+form {
+  display: block;
+  margin-top: 0em;
+}
+.register-block .form-input {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  grid-gap: 30px;
+  margin-bottom: 15px;
+}
+
+.register-block label {
+  text-align: right;
+  align-self: center;
+  font-size: 16px;
+  color: var(--heading-color);
+  font-weight: 600;
+}
+.register-block input[type="email"],
+.register-block select,
+.register-block input[type="text"],
+.register-block input[type="number"],
+.register-block input[type="password"] {
+  display: block;
+  outline: none;
+  width: 100%;
+  padding: 15px 20px;
+  font-size: 16px;
+  color: #333;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: inherit;
+}
+/* regisrtation page css stop */
