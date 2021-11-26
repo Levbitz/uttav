@@ -17,111 +17,530 @@ Author URL: http://your-site.com
     <!-- Template CSS -->
     <link rel="stylesheet" href="assets/css/main.css">
 
+    <style>
+      
+h1{
+  font-family: 'Abel', sans-serif;
+  font-weight:100;
+  font-size: 40px;
+  text-align:center;
+}
+.container{
+  width:80%;
+  margin:0 auto;
+}
+
+a{
+	outline: 0 !important;
+}
+.magnific-img img {
+    width: 100%;
+    height: auto;
+}
+.mfp-bottom-bar,*{
+   font-family: 'Abel', sans-serif;
+}
+.magnific-img {
+    display: inline-block;
+    width: 32.3%;
+}
+a.image-popup-vertical-fit {
+    cursor: -webkit-zoom-in;
+}
+.mfp-with-zoom .mfp-container,
+.mfp-with-zoom.mfp-bg {
+  opacity: 0;
+  -webkit-backface-visibility: hidden;
+  /* ideally, transition speed should match zoom duration */
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+.mfp-with-zoom.mfp-ready .mfp-container {
+    opacity: 1;
+}
+.mfp-with-zoom.mfp-ready.mfp-bg {
+    opacity: 0.98;
+}
+
+.mfp-with-zoom.mfp-removing .mfp-container,
+.mfp-with-zoom.mfp-removing.mfp-bg {
+  opacity: 0;
+}
+.mfp-arrow-left:before {
+    border-right: none !important;
+}
+.mfp-arrow-right:before {
+    border-left: none !important;
+}
+button.mfp-arrow, .mfp-counter {
+    opacity: 0 !important;
+    transition: opacity 200ms ease-in, opacity 2000ms ease-out;
+}
+.mfp-container:hover button.mfp-arrow, .mfp-container:hover .mfp-counter{
+	opacity: 1 !important;
+}
+
+
+/* Magnific Popup CSS */
+.mfp-bg {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1042;
+  overflow: hidden;
+  position: fixed;
+  background: #0b0b0b;
+  opacity: 0.8; }
+
+.mfp-wrap {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1043;
+  position: fixed;
+  outline: none !important;
+  -webkit-backface-visibility: hidden; }
+
+.mfp-container {
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  padding: 0 8px;
+  box-sizing: border-box; }
+
+.mfp-container:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle; }
+
+.mfp-align-top .mfp-container:before {
+  display: none; }
+
+.mfp-content {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 auto;
+  text-align: left;
+  z-index: 1045; }
+
+.mfp-inline-holder .mfp-content,
+.mfp-ajax-holder .mfp-content {
+  width: 100%;
+  cursor: auto; }
+
+.mfp-ajax-cur {
+  cursor: progress; }
+
+.mfp-zoom-out-cur, .mfp-zoom-out-cur .mfp-image-holder .mfp-close {
+  cursor: -moz-zoom-out;
+  cursor: -webkit-zoom-out;
+  cursor: zoom-out; }
+
+.mfp-zoom {
+  cursor: pointer;
+  cursor: -webkit-zoom-in;
+  cursor: -moz-zoom-in;
+  cursor: zoom-in; }
+
+.mfp-auto-cursor .mfp-content {
+  cursor: auto; }
+
+.mfp-close,
+.mfp-arrow,
+.mfp-preloader,
+.mfp-counter {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none; }
+
+.mfp-loading.mfp-figure {
+  display: none; }
+
+.mfp-hide {
+  display: none !important; }
+
+.mfp-preloader {
+  color: #CCC;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  text-align: center;
+  margin-top: -0.8em;
+  left: 8px;
+  right: 8px;
+  z-index: 1044; }
+  .mfp-preloader a {
+    color: #CCC; }
+    .mfp-preloader a:hover {
+      color: #FFF; }
+
+.mfp-s-ready .mfp-preloader {
+  display: none; }
+
+.mfp-s-error .mfp-content {
+  display: none; }
+
+button.mfp-close,
+button.mfp-arrow {
+  overflow: visible;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  -webkit-appearance: none;
+  display: block;
+  outline: none;
+  padding: 0;
+  z-index: 1046;
+  box-shadow: none;
+  touch-action: manipulation; }
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0; }
+
+.mfp-close {
+  width: 44px;
+  height: 44px;
+  line-height: 44px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  text-decoration: none;
+  text-align: center;
+  opacity: 0.65;
+  padding: 0 0 18px 10px;
+  color: #FFF;
+  font-style: normal;
+  font-size: 28px;
+  font-family: Arial, Baskerville, monospace; }
+  .mfp-close:hover,
+  .mfp-close:focus {
+    opacity: 1; }
+  .mfp-close:active {
+    top: 1px; }
+
+.mfp-close-btn-in .mfp-close {
+  color: #333; }
+
+.mfp-image-holder .mfp-close,
+.mfp-iframe-holder .mfp-close {
+  color: #FFF;
+  right: -6px;
+  text-align: right;
+  padding-right: 6px;
+  width: 100%; }
+
+.mfp-counter {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #CCC;
+  font-size: 12px;
+  line-height: 18px;
+  white-space: nowrap; }
+
+.mfp-arrow {
+  position: absolute;
+  opacity: 0.65;
+  margin: 0;
+  top: 50%;
+  margin-top: -55px;
+  padding: 0;
+  width: 90px;
+  height: 110px;
+  -webkit-tap-highlight-color: transparent; }
+  .mfp-arrow:active {
+    margin-top: -54px; }
+  .mfp-arrow:hover,
+  .mfp-arrow:focus {
+    opacity: 1; }
+  .mfp-arrow:before,
+  .mfp-arrow:after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin-top: 35px;
+    margin-left: 35px;
+    border: medium inset transparent; }
+  .mfp-arrow:after {
+    border-top-width: 13px;
+    border-bottom-width: 13px;
+    top: 8px; }
+  .mfp-arrow:before {
+    border-top-width: 21px;
+    border-bottom-width: 21px;
+    opacity: 0.7; }
+
+.mfp-arrow-left {
+  left: 0; }
+  .mfp-arrow-left:after {
+    border-right: 17px solid #FFF;
+    margin-left: 31px; }
+  .mfp-arrow-left:before {
+    margin-left: 25px;
+    border-right: 27px solid #3F3F3F; }
+
+.mfp-arrow-right {
+  right: 0; }
+  .mfp-arrow-right:after {
+    border-left: 17px solid #FFF;
+    margin-left: 39px; }
+  .mfp-arrow-right:before {
+    border-left: 27px solid #3F3F3F; }
+
+.mfp-iframe-holder {
+  padding-top: 40px;
+  padding-bottom: 40px; }
+  .mfp-iframe-holder .mfp-content {
+    line-height: 0;
+    width: 100%;
+    max-width: 900px; }
+  .mfp-iframe-holder .mfp-close {
+    top: -40px; }
+
+.mfp-iframe-scaler {
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  padding-top: 56.25%; }
+  .mfp-iframe-scaler iframe {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+    background: #000; }
+
+/* Main image in popup */
+img.mfp-img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  line-height: 0;
+  box-sizing: border-box;
+  padding: 40px 0 40px;
+  margin: 0 auto; }
+
+/* The shadow behind the image */
+.mfp-figure {
+  line-height: 0; }
+  .mfp-figure:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 40px;
+    bottom: 40px;
+    display: block;
+    right: 0;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+    background: #444; }
+  .mfp-figure small {
+    color: #BDBDBD;
+    display: block;
+    font-size: 12px;
+    line-height: 14px; }
+  .mfp-figure figure {
+    margin: 0; }
+
+.mfp-bottom-bar {
+  margin-top: -36px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  cursor: auto; }
+
+.mfp-title {
+  text-align: left;
+  line-height: 18px;
+  color: #F3F3F3;
+  word-wrap: break-word;
+  padding-right: 36px; }
+
+.mfp-image-holder .mfp-content {
+  max-width: 100%; }
+
+.mfp-gallery .mfp-image-holder .mfp-figure {
+  cursor: pointer; }
+
+@media screen and (max-width: 800px) and (orientation: landscape), screen and (max-height: 300px) {
+  /**
+       * Remove all paddings around the image on small screen
+       */
+  .mfp-img-mobile .mfp-image-holder {
+    padding-left: 0;
+    padding-right: 0; }
+  .mfp-img-mobile img.mfp-img {
+    padding: 0; }
+  .mfp-img-mobile .mfp-figure:after {
+    top: 0;
+    bottom: 0; }
+  .mfp-img-mobile .mfp-figure small {
+    display: inline;
+    margin-left: 5px; }
+  .mfp-img-mobile .mfp-bottom-bar {
+    background: rgba(0, 0, 0, 0.6);
+    bottom: 0;
+    margin: 0;
+    top: auto;
+    padding: 3px 5px;
+    position: fixed;
+    box-sizing: border-box; }
+    .mfp-img-mobile .mfp-bottom-bar:empty {
+      padding: 0; }
+  .mfp-img-mobile .mfp-counter {
+    right: 5px;
+    top: 3px; }
+  .mfp-img-mobile .mfp-close {
+    top: 0;
+    right: 0;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    background: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    text-align: center;
+    padding: 0; } }
+
+@media all and (max-width: 900px) {
+  .mfp-arrow {
+    -webkit-transform: scale(0.75);
+    transform: scale(0.75); }
+  .mfp-arrow-left {
+    -webkit-transform-origin: 0;
+    transform-origin: 0; }
+  .mfp-arrow-right {
+    -webkit-transform-origin: 100%;
+    transform-origin: 100%; }
+  .mfp-container {
+    padding-left: 6px;
+    padding-right: 6px; } }
+    </style>
+
 </head>
 
 <body>
-    <!--header-->
-    <header id="site-header" class="fixed-top">
-        <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-dark stroke">
-                
-      <div>
-                     <a class="navbar-brand" href="#index.html">
-          <img width="80px" src="assets/images/logo.png" alt="Your logo" title="Your logo" />
-      </a>   
-                    </div>
-                <button class="navbar-toggler  collapsed bg-gradient" type="button" data-toggle="collapse"
-                    data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
-                    <span class="navbar-toggler-icon fa icon-close fa-times"></span>
-                    </span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                    <nav class="mr-auto ml-lg-5">
-                        <div class="search-bar">
-                            
-                        </div>
-                    </nav>
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-                        </li>
-                        <!-- <li class="nav-item ">
-                            <a class="nav-link" href="about.html">About</a>
-                        </li> -->
-
-                       
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Events <span class="fa fa-angle-down"></span>
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                
-                                <a class="dropdown-item scroll" href="upcoming-events.html">Upcoming Events</a>
-                                <a class="dropdown-item scroll" href="past-events.html">Past Events</a>
-                              
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                 Partners <span class="fa fa-angle-down"></span>
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                
-                                <a class="dropdown-item scroll" href="partners.html">Partners in the Upcoming Event</a>
-                                <a class="dropdown-item scroll" href="valuable-partners.html">Valuable Partners in the Past</a>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                 Speakers <span class="fa fa-angle-down"></span>
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                
-                                <a class="dropdown-item scroll" href="current-speakers.html">Current Speakers</a>
-                                <a class="dropdown-item scroll" href="Past-speakers.html">	Past Speakers</a>
-                              
-                            </div>
-                        </li>
-                        <li class="nav-item active">
-                            <a class="nav-link" href="gallary.html">Gallery</a>
-                        </li>
-                       
-                        <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contact</a>
-                        </li>
-                        <!-- <li class="nav-item">
-                            <a class="nav-link lb_register_btn" href="register.html">Register</a>
-                        </li> -->
-                        <li class="nav-item">
-                            <a class="nav-link lb_register_btn" href="enquiry.html">enquiries</a>
-                        </li>
-                        
-                    </ul>
+  
+  <!--header-->
+  <header id="site-header" class="fixed-top  bg-white">
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-dark stroke ">
+            <!-- <h1><a class="navbar-brand" href="index.html">
+                    <img  src="assets/images/logo.png" alt="">
+                </a></h1> -->
+  
+                <div>
+                 <a class="navbar-brand" href="#index.html">
+      <img width="100px" src="assets/images/logo.png" alt="Your logo" title="Your logo" />
+  </a>   
                 </div>
+   
+ 
+            <button class="navbar-toggler  collapsed bg-gradient" type="button" data-toggle="collapse"
+                data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
+                <span class="navbar-toggler-icon fa icon-close fa-times"></span>
+                </span>
+            </button>
 
-            </nav>
-        </div>
-    </header>
-    <!--/header-->
-  <div class="inner-banner">
-    <section class="w3l-breadcrumb">
-      <div class="container">
-        <ul class="breadcrumbs-custom-path">
-          <li><a href="index.html">Home</a></li>
-          <li class="active"><span class="fa fa-chevron-right mx-2" aria-hidden="true"></span> Blog</li>
-        </ul>
-      </div>
-    </section>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <nav class="">
+                    <div class="search-bar">
+                        
+                    </div>
+                </nav>
+                <ul class="navbar-nav mr-auto pull-right">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Events <span class="fa fa-angle-down"></span>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            
+                            <a class="dropdown-item scroll" href="upcoming-events.html">Upcoming Events</a>
+                            <a class="dropdown-item scroll" href="past-events.html">Past Events</a>
+                          
+                        </div>
+                    </li>
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Speakers <span class="fa fa-angle-down"></span>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            
+                            <a class="dropdown-item scroll" href="current-speakers.html">Present Speakers</a>
+                            <a class="dropdown-item scroll" href="Past-speakers.html">	Past Speakers</a>
+                          
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                             Partners <span class="fa fa-angle-down"></span>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            
+                            <a class="dropdown-item scroll" href="partners.html">Present Partners </a>
+                            <a class="dropdown-item scroll" href="valuable-partners.html">Past Partners</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallary.html">  Gallery</a>
+                    </li>
+                  
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="career.html">Career</a>
+                    </li> -->
+                   
+                    <li class="nav-item">
+                        <a  class="nav-link " href="enquiry.html">Institutional Enquiry</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a  class="nav-link " href="register.html"> Student Registration</a>
+                    </li>
+                    
+                </ul>
+            </div>
+      
+        </nav>
+    </div>
+</header>
+<!--/header-->
+
+  <div class="inner-banner" style="min-height: 80px;">
+    
   </div>
   <!-- about page about section -->
    <!--/blog-post-->
-   <section class="w3l-blogpost-content py-5">
+   <section class="w3l-blogpost-content">
     <div class="container py-md-5">
 	<div style="margin: 8px auto; display: block; text-align:center;">
 
@@ -129,16 +548,122 @@ Author URL: http://your-site.com
 
  
 </div>
-        <div class="header-title">
-            <span class="sub-title">Latest photos</span>
-            <h3 class="hny-title text-left">gallary</h3>
-        </div>
+      <div class="header-title">
+        <h3 class="text-danger" style="font-size: 24px; font-weight: 600;">gallary</h3>
+        <h4>Image Section</h4>
+      </div>
 		<div style="margin: 8px auto; display: block; text-align:center;">
 
 <!---728x90--->
  
 </div>
-        <div class="row">
+
+<!--New gallary-->
+<!--New gallary-->
+<div class="container-fluid">
+  
+  
+  
+		<p><section class="img-gallery-magnific">
+			<div class="magnific-img">
+				<a class="image-popup-vertical-fit" href="assets/images/gallery/1.jpg" title="9.jpg">
+					<img src="assets/images/gallery/1.jpg" alt="" />
+					
+				</a>
+			</div>
+			<div class="magnific-img">
+				<a class="image-popup-vertical-fit" href="assets/images/gallery/2.JPG" title="10.jpg">
+					<img src="assets/images/gallery/2.JPG" alt="" />
+					
+				</a>
+			</div>
+			<div class="magnific-img">
+				<a class="image-popup-vertical-fit" href="assets/images/gallery/3.JPG" title="3.jpg">
+					<img src="assets/images/gallery/3.JPG" alt="" />
+					
+				</a>
+			</div>
+			<div class="magnific-img">
+				<a class="image-popup-vertical-fit" href="assets/images/gallery/4.JPG" title="4.jpg">
+					<img src="assets/images/gallery/4.JPG" alt="" />
+					
+				</a>
+			</div>
+			<div class="magnific-img">
+				<a class="image-popup-vertical-fit" href="assets/images/gallery/9.jpg" title="1.jpg">
+					<img src="assets/images/gallery/9.jpg" alt="" />
+					
+				</a>
+			</div>
+			<div class="magnific-img">
+				<a class="image-popup-vertical-fit" href="assets/images/gallery/6.png" title="2.jpg">
+					<img src="assets/images/gallery/6.png" alt="" />
+					
+				</a>
+			</div>
+			<div class="magnific-img">
+				<a class="image-popup-vertical-fit" href="assets/images/gallery/7.png" title="5.jpg">
+					<img src="assets/images/gallery/7.png" alt="5.jpg" />
+					
+				</a>
+			</div>
+			<div class="magnific-img">
+				<a class="image-popup-vertical-fit" href="assets/images/gallery/8.png" title="6.jpg">
+					<img src="assets/images/gallery/8.png" alt="6.jpg" />
+					
+				</a>
+			</div>
+			<div class="magnific-img">
+				<a class="image-popup-vertical-fit" href="assets/images/gallery/11.JPG" title="7.jpg">
+					<img src="assets/images/gallery/11.JPG" alt="7.jpg" />
+					
+				</a>
+			</div>
+			<div class="magnific-img">
+				<a class="image-popup-vertical-fit" href="assets/images/gallery/12.JPG" title="8.jpg">
+					<img src="assets/images/gallery/12.JPG" alt="8.jpg" />
+					
+				</a>
+			</div>
+			<div class="magnific-img">
+				<a class="image-popup-vertical-fit" href="assets/images/gallery/13.JPG" title="12.jpg">
+					<img src="assets/images/gallery/13.JPG" alt="12.jpg" />
+					
+				</a>
+			</div>
+			<div class="magnific-img">
+				<a class="image-popup-vertical-fit" href="assets/images/gallery/14.JPG" title="13.jpg">
+					<img src="assets/images/gallery/14.JPG" alt="13.jpg" />
+					
+				</a>
+			</div>
+			<div class="magnific-img">
+				<a class="image-popup-vertical-fit" href="assets/images/gallery/15.JPG" title="14.jpg">
+					<img src="assets/images/gallery/15.JPG" alt="14.jpg" />
+					
+				</a>
+			</div>
+			<div class="magnific-img">
+				<a class="image-popup-vertical-fit" href="assets/images/gallery/16.JPG" title="15.jpg">
+					<img src="assets/images/gallery/16.JPG" alt="15.jpg" />
+					
+				</a>
+			</div>
+            
+			<div class="magnific-img">
+				<a class="image-popup-vertical-fit" href="assets/images/gallery/17.JPG" title="16.jpg">
+					<img src="assets/images/gallery/17.JPG" alt="16.jpg" />
+					
+				</a>
+			</div>
+		</section>
+		<div class="clear"></div>
+	</p>
+
+</div>
+<!--New gallary-->
+<!--New gallary-->
+        <!-- <div class="row">
           <div class="col-lg-4 col-md-6 mt-md-5 mt-4">
                 <div class="card">
                     <div class="card-header p-0 position-relative">
@@ -230,9 +755,9 @@ Author URL: http://your-site.com
             </div>
         </div>
 
-        </div>
+        </div> -->
               <!-- pagination -->
-      <div class="pagination-wrapper mt-5 pt-lg-3 text-left">
+      <!-- <div class="pagination-wrapper mt-5 pt-lg-3 text-left">
         <ul class="page-pagination">
           <li><span aria-current="page" class="page-numbers current">1</span></li>
           <li><a class="page-numbers" href="#url">2</a></li>
@@ -241,171 +766,238 @@ Author URL: http://your-site.com
           <li><a class="page-numbers" href="#url">15</a></li>
           <li><a class="next" href="#url">Next <span class="fa fa-angle-right"></span></a></li>
         </ul>
-      </div>
+      </div> -->
       <!-- //pagination -->
     </div>
 </section>
 <!--//blog-posts-->
-<div style="margin: 8px auto; display: block; text-align:center;">
+<section class="w3l-blogpost-content">
+  <div class="container py-md-5">
+      <div class="header-title">
+          <h3 class="text-danger" style="font-size: 24px; font-weight: 600;">gallary</h3>
+          <h4>video Section</h4>
+      </div>
+<div >
 
 
-	<div class="row">
-		<div class="col"><section class="w3l-videohny" id="video">
-    <div class="new-block py-5">
-        <div class="container py-lg-5">
-                <div class="history-info position-relative"> 
-                        <!--//video-->
-                         <a href="#small-dialog" class="popup-with-zoom-anim play-view text-center pl-3">
-                            <span class="video-play-icon">
-                                <span class="fa fa-play"></span>
-                            </span>
-                        </a> 
+<div class="row py-1">
+  <div class="col"><section class="w3l-videohny" id="video">
+  <div class="new-block">
+      <div class="container">
+          <div class="history-info position-relative"> 
+              <!--//video-->
+                  <a href="#small-dialog" class="popup-with-zoom-anim play-view text-center pl-3">
+                  <span class="video-play-icon">
+                      <span class="fa fa-play"></span>
+                  </span>
+              </a> 
 
-                        <!-- dialog itself, mfp-hide class is required to make dialog hidden -->
-                         <div id="small-dialog" class="zoom-anim-dialog mfp-hide">
-                            <iframe src="https://player.vimeo.com/video/18212142" frameborder="0"
-                                allow="autoplay; fullscreen" allowfullscreen></iframe>
-                        </div> 
-                        <!--//video-->
-                    </div></div>
-	</div>
+              <!-- dialog itself, mfp-hide class is required to make dialog hidden -->
+                  <div id="small-dialog" class="zoom-anim-dialog mfp-hide">
+                      <iframe width="560" height="315" src="https://www.youtube.com/embed/YhPdneXaVsQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div> 
+              <!--//video-->
+          </div>
+      </div>
 </div>
-		<div class="col"><section class="w3l-videohny" id="video">
-    <div class="new-block py-5">
-        <div class="container py-lg-5">
-                <div class="history-info position-relative"> 
-                        <!--//video-->
-                         <a href="#small-dialog" class="popup-with-zoom-anim play-view text-center pl-3">
-                            <span class="video-play-icon">
-                                <span class="fa fa-play"></span>
-                            </span>
-                        </a> 
-
-                        <!-- dialog itself, mfp-hide class is required to make dialog hidden -->
-                         <div id="small-dialog" class="zoom-anim-dialog mfp-hide">
-                            <iframe src="https://player.vimeo.com/video/18212142" frameborder="0"
-                                allow="autoplay; fullscreen" allowfullscreen></iframe>
-                        </div> 
-                        <!--//video-->
-                    </div></div>
-	</div>
 </div>
-	
+  <div class="col"><section class="w3l-videohny" id="video">
+  <div class="new-block">
+      <div class="container">
+              <div class="history-info position-relative"> 
+                      <!--//video-->
+                       <a href="#small-dialog1" class="popup-with-zoom-anim play-view text-center pl-3">
+                          <span class="video-play-icon">
+                              <span class="fa fa-play"></span>
+                          </span>
+                      </a> 
+
+                      <!-- dialog itself, mfp-hide class is required to make dialog hidden -->
+                       <div id="small-dialog1" class="zoom-anim-dialog mfp-hide">
+                          <iframe width="560" height="315" src="https://www.youtube.com/embed/L_oy3gCA3mM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                      </div> 
+                      <!--//video-->
+                  </div></div>
+</div>
+</div>
+
+<div class="col"><section class="w3l-videohny" id="video">
+  <div class="new-block">
+      <div class="container">
+              <div class="history-info position-relative"> 
+                      <!--//video-->
+                       <a href="#small-dialog2" class="popup-with-zoom-anim play-view text-center pl-3">
+                          <span class="video-play-icon">
+                              <span class="fa fa-play"></span>
+                          </span>
+                      </a> 
+
+                      <!-- dialog itself, mfp-hide class is required to make dialog hidden -->
+                       <div id="small-dialog2" class="zoom-anim-dialog mfp-hide">
+                          <iframe width="560" height="315" src="https://www.youtube.com/embed/HIM1Pe7bbQ0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                      </div> 
+                      <!--//video-->
+                  </div></div>
+</div>
+</div>
+
+<div class="col"><section class="w3l-videohny" id="video">
+  <div class="new-block">
+      <div class="container ">
+              <div class="history-info position-relative"> 
+                      <!--//video-->
+                       <a href="#small-dialog3" class="popup-with-zoom-anim play-view text-center pl-3">
+                          <span class="video-play-icon">
+                              <span class="fa fa-play"></span>
+                          </span>
+                      </a> 
+
+                      <!-- dialog itself, mfp-hide class is required to make dialog hidden -->
+                       <div id="small-dialog3" class="zoom-anim-dialog mfp-hide">
+                          <iframe src="https://www.youtube.com/embed/og95IRl-sMU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                      </div> 
+                      <!--//video-->
+                  </div></div>
+</div>
+</div>
 
 <!---728x90--->
- 
+
 </div>
+</div>
+</section>
     <!-- footer -->
-    <img height="80px" width="100%" src="assets/images/footerImg/three.png" alt="">
-    <section class="w3l-footer-29-main">
-        <div class="footer-29 py-5">
-            <div class="container py-lg-4">
-                <div class="row footer-top-29">
-                    <div class="col-lg-4 col-md-6 col-sm-7 footer-list-29 footer-1 pr-lg-5">
-                        <div class="footer-logo mb-3">
-                            <div style="display: flex;">
-                                
-                                <div>
-                                    <img width="150px" src="assets/images/footerImg/Footer-2.png" alt="">
-                                </div><div>
-                                  <img width="150px" src="assets/images/footerImg/two.png" alt="">  
-                                </div>
-                            </div>
+<img width="100%" src="assets/images/footerImg/three.png" alt="">
+<section class="w3l-footer-29-main">
+    <div class="footer-29 py-5">
+        <div class="container py-lg-4">
+            <div class="row footer-top-29 text-center">
+                <div class="col-lg-4 col-md-6 col-sm-7 footer-list-29 footer-1 pr-lg-5">
+                    <div class="footer-logo mb-3">
+                        <div style="display: flex;">
                             
+                            <div>
+                                <img width="80%" src="assets/images/footerImg/footer1.png" alt="">
+                            </div>
+                            <!-- <div>
+                              <img width="100%" src="assets/images/footerImg/footer2.png" alt="">  
+                            </div> -->
                         </div>
-                        <p>Lorem ipsum viverra feugiat. Pellen tesque libero ut justo, ultrices in ligula. Semper at
-                            tempufddfel. Lorem ipsum dolor sit amet Semper at elit.</p>
-                        <div class="main-social-footer-29 mt-4">
-                            <a href="https://www.facebook.com/CareerUttsav/" class="facebook"><span class="fa fa-facebook"></span></a>
-                            <a href="http://www.twitter.com/CareerUtsav
-" class="twitter"><span class="fa fa-twitter"></span></a>
-                            <a href="http://www.youtube.com/channel/UCgU4hSyfIP9xLnXe4TVoiRw" class="instagram"><span class="fa fa-youtube"></span></a>
-                            <a href="https://in.linkedin.com/in/careerutsav" class="linkedin"><span class="fa fa-linkedin"></span></a>
-                        </div>
+                        
                     </div>
-                    <div class="col-lg-2 col-md-6 col-sm-5 col-6 footer-list-29 footer-2 mt-sm-0 mt-5">
 
-                        <ul>
-                            <h6 class="footer-title-29">Usefull Links</h6>
-                            <li><a href="about.html">About Us</a></li>
-                            <li><a href="services.html">Courses</a></li>
-                            <li><a href="#pricing"> Pricing plans</a></li>
-                            <li><a href="#careers"> Careers</a></li>
-                            <li><a href="blog.html"> Blog posts</a></li>
-                            <li><a href="contact.html">Contact us</a></li>
-                        </ul>
+                    <style>
+                        .fb{
+background-color: #3b5998 !important
+                        }
+                        .fb:hover{
+                          opacity: 0.7 !important;
+                        }
+                        .tw{
+                          background-color: #55acee !important
+                          
+                        }
+                        .tw:hover{
+                          opacity: 0.7;
+                        }
+                        .lind{
+                          background: #007bb5 !important;
+                        }
+                        .yout{
+                          background: #bb0000 !important;
+                        }
+                        .yout:hover{
+                          opacity: 0.7;
+                        }
+                      </style>
+                    <div class="main-social-footer-29 mt-4 text-center">
+                        <a href="https://www.facebook.com/CareerUttsav/" class="facebook fb"><span  style="color:#fff" class="fa fa-facebook "></span></a>
+                        <a   href="http://www.twitter.com/CareerUtsav
+" class="twitter tw"><span style="color:#fff" class="fa fa-twitter"></span></a>
+                        <a href="http://www.youtube.com/channel/UCgU4hSyfIP9xLnXe4TVoiRw" class="instagram  yout"><span class="fa fa-1.5x fa-youtube text-white"></span></a>
+                        <a href="https://in.linkedin.com/in/careerutsav" class="linkedin lind"><span class="fa fa-linkedin text-white"></span></a>
                     </div>
-                    <div class="col-lg-2 col-md-6 col-sm-5 col-6 footer-list-29 footer-3 mt-lg-0 mt-5">
-                        <h6 class="footer-title-29">More Info</h6>
-                        <ul>
-                            <li><a href="#profile">Profile</a></li>
-                            <li><a href="#vision">Vision & Values</a></li>
-                            <li><a href="#history">History</a></li>
-                            <li><a href="#leader">Leadership</a></li>
-                            <li><a href="#help">Help</a></li>
-                            <li><a href="#support"> Support</a></li>
-                        </ul>
+                </div>
+                <!-- <div class="col-lg-2 col-md-6 col-sm-5 col-6 footer-list-29 footer-3 mt-lg-0 mt-5">
+                    <h6 class="footer-title-29">More Info</h6>
+                    <ul>
+                        <li><a href="#profile">Profile</a></li>
+                        <li><a href="#vision">Vision & Values</a></li>
+                        <li><a href="#history">History</a></li>
+                        <li><a href="#leader">Leadership</a></li>
+                        <li><a href="#help">Help</a></li>
+                        <li><a href="#support"> Support</a></li>
+                    </ul>
 
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-7 footer-list-29 footer-4 mt-lg-0 mt-5">
-                        <h6 class="footer-title-29">Contact Info </h6>
-                        <p><strong>Address :</strong> Logo, 343 Honey Avenue street, NY - 62617.</p>
-                        <p class="my-2"><strong>Phone :</strong> <a href="tel:+12 23456799">+12 23456799</a></p>
-                        <p><strong>Email :</strong> <a href="mailto:info@example.com">info@example.com</a></p>
-                    </div>
+                </div> -->
+                <div class="col-lg-5 col-md-6 col-sm-7 footer-list-29 footer-4 mt-lg-0 mt-5">
+                    <h6 class="footer-title-29">Contact Info </h6>
+                    <p><strong>K2 Learning Resources India [p] Ltd</strong> </p>
+                    <p><strong>Address : </strong>No. 200, 4<sup>th</sup> Main Road, Chamrajpet, Bengaluru India - 560018</p>
+                    <p class="my-2"><strong>Phone :</strong> <a href="tel:+919900795000">+91-9900795000 / +91-9900795111 </a></p>
+                    <p><strong>Email :</strong> <a href="mailto:info@careeruttsav.com">info@careeruttsav.com</a></p>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-5 col-6 footer-list-29 footer-2 mt-sm-0 mt-5">
+
+                    <ul>
+                        <h6 class="footer-title-29">Usefull Links</h6>
+                        <li><a href="career.html"> Careers</a></li>
+                        <li><a href="blog.html"> Blog posts</a></li>
+                        <li><a href="contact.html">FaQ's</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- //footer -->
-  <!-- //footer -->
+    </div>
+</section>
+<!-- //footer -->
 
-  <!-- copyright -->
-  <section class="w3l-copyright">
-      <div class="container">
-          <div class="row bottom-copies">
-              <p class="col-lg-8 copy-footer-29">© 2020 xyx. All rights reserved. Design by <a
-                      href="" target="_blank">
-                      RCS</a></p>
+<!-- copyright -->
+<section class="w3l-copyright">
+    <div class="container">
+        <div class="row bottom-copies text-center">
+            <p class="col-lg-12 copy-footer-29"> Copyright &copy; 2018-<script>document.write(new Date().getFullYear())</script> Career Uttsav - All Rights Reserved | Design by <a
+                href="https://rcsinfo.in/" target="_blank">
+                RCS Technology</a></p>
+            <!-- <div class="col-lg-4 footer-list-29">
+                <ul class="d-flex text-lg-right justify-content-center mt-lg-0 mt-3">
+                    <li><a href="#careers"> Careers</a></li>
+                    <li class="mx-lg-5 mx-md-4 mx-3"><a href="#privacymy-lg-0 my-4">Privacy Policy</a></li>
+                    <li><a href="contact.html">Contact us</a></li>
+                </ul>
+            </div> -->
 
-              <div class="col-lg-4 footer-list-29">
-                  <ul class="d-flex text-lg-right justify-content-center mt-lg-0 mt-3">
-                      <li><a href="#careers"> Careers</a></li>
-                      <li class="mx-lg-5 mx-md-4 mx-3"><a href="#privacymy-lg-0 my-4">Privacy Policy</a></li>
-                      <li><a href="contact.html">Contact us</a></li>
-                  </ul>
-              </div>
+        </div>
+    </div>
 
-          </div>
-      </div>
+    <!-- move top -->
+    <button onclick="topFunction()" id="movetop" title="Go to top">
+        &#10548;
+    </button>
+    <script>
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () {
+            scrollFunction()
+        };
 
-      <!-- move top -->
-      <button onclick="topFunction()" id="movetop" title="Go to top">
-          &#10548;
-      </button>
-      <script>
-          // When the user scrolls down 20px from the top of the document, show the button
-          window.onscroll = function () {
-              scrollFunction()
-          };
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("movetop").style.display = "block";
+            } else {
+                document.getElementById("movetop").style.display = "none";
+            }
+        }
 
-          function scrollFunction() {
-              if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                  document.getElementById("movetop").style.display = "block";
-              } else {
-                  document.getElementById("movetop").style.display = "none";
-              }
-          }
-
-          // When the user clicks on the button, scroll to the top of the document
-          function topFunction() {
-              document.body.scrollTop = 0;
-              document.documentElement.scrollTop = 0;
-          }
-      </script>
-      <!-- /move top -->
-  </section>
-  <!-- //copyright -->
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+    <!-- /move top -->
+  
+</section>
+<!-- //copyright -->
   <script src="assets/js/jquery-3.3.1.min.js"></script> <!-- Common jquery plugin -->
   <script src="assets/js/theme-change.js"></script><!-- theme switch js (light and dark)-->
   <!--/MENU-JS-->
@@ -486,6 +1078,32 @@ Author URL: http://your-site.com
                 mainClass: 'my-mfp-slide-bottom'
             });
         });
+    </script>
+
+    <script>
+        $(document).ready(function(){
+$('.image-popup-vertical-fit').magnificPopup({
+	type: 'image',
+  mainClass: 'mfp-with-zoom', 
+  gallery:{
+			enabled:true
+		},
+
+  zoom: {
+    enabled: true, 
+
+    duration: 300, // duration of the effect, in milliseconds
+    easing: 'ease-in-out', // CSS transition easing function
+
+    opener: function(openerElement) {
+
+      return openerElement.is('img') ? openerElement : openerElement.find('img');
+  }
+}
+
+});
+
+});
     </script>
 
 

@@ -23,6 +23,11 @@ Author URL: http://mysite.com
     <link rel="stylesheet" href="assets/css/alt.css" />
     <link rel="stylesheet" href="assets/css/events.css">
 
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<link  href="/path/to/jquery.fancybox.min.css" rel="stylesheet">
+<script src="/path/to/jquery.fancybox.min.js"></script>
+
     <style>
         .lb_inner_event_subtitle_event_wrap{
        display: flex;
@@ -33,51 +38,67 @@ Author URL: http://mysite.com
             font-size: 28px;
             margin-left: 30px;
         }
-        
+  
     </style>
+
+
   </head>
   <body>
-       <header id="site-header" class="fixed-top">
-        <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-dark stroke">
-                
-      <div>
-                     <a class="navbar-brand" href="#index.html">
-          <img width="80px" src="assets/images/logo.png" alt="Your logo" title="Your logo" />
-      </a>   
-                    </div>
-                <button class="navbar-toggler  collapsed bg-gradient" type="button" data-toggle="collapse"
-                    data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
-                    <span class="navbar-toggler-icon fa icon-close fa-times"></span>
-                    </span>
-                </button>
+    <header id="site-header" class="fixed-top  bg-white">
+      <div class="container-fluid">
+          <nav class="navbar navbar-expand-lg navbar-dark stroke ">
+              <!-- <h1><a class="navbar-brand" href="index.html">
+                      <img  src="assets/images/logo.png" alt="">
+                  </a></h1> -->
+    
+                  <div>
+                   <a class="navbar-brand" href="#index.html">
+        <img width="100px" src="assets/images/logo.png" alt="Your logo" title="Your logo" />
+    </a>   
+                  </div>
+     
+   
+              <button class="navbar-toggler  collapsed bg-gradient" type="button" data-toggle="collapse"
+                  data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
+                  aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
+                  <span class="navbar-toggler-icon fa icon-close fa-times"></span>
+                  </span>
+              </button>
 
-                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                    <nav class="mr-auto ml-lg-5">
-                        <div class="search-bar">
-                            
-                        </div>
-                    </nav>
-                    <ul class="navbar-nav mr-auto">
-                      <li class="nav-item">
+              <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                  <nav class="">
+                      <div class="search-bar">
+                          
+                      </div>
+                  </nav>
+                  <ul class="navbar-nav mr-auto pull-right">
+                      <li class="nav-item active">
                           <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
                       </li>
-                      <!-- <li class="nav-item ">
-                          <a class="nav-link" href="about.html">About</a>
-                      </li> -->
 
-                     
-                      <li class="nav-item dropdown active">
+                      <li class="nav-item dropdown">
                           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              Events <span class="fa fa-angle-down"></span>
+                        Events <span class="fa fa-angle-down"></span>
                           </a>
                           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                               
                               <a class="dropdown-item scroll" href="upcoming-events.html">Upcoming Events</a>
                               <a class="dropdown-item scroll" href="past-events.html">Past Events</a>
+                            
+                          </div>
+                      </li>
+                      
+                      <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Speakers <span class="fa fa-angle-down"></span>
+                          </a>
+                          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                              
+                              <a class="dropdown-item scroll" href="current-speakers.html">Present Speakers</a>
+                              <a class="dropdown-item scroll" href="Past-speakers.html">	Past Speakers</a>
                             
                           </div>
                       </li>
@@ -88,84 +109,99 @@ Author URL: http://mysite.com
                           </a>
                           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                               
-                              <a class="dropdown-item scroll" href="partners.html">Partners in the Upcoming Event</a>
-                              <a class="dropdown-item scroll" href="valuable-partners.html">Valuable Partners in the Past</a>
-                          </div>
-                      </li>
-                      <li class="nav-item dropdown">
-                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                               Speakers <span class="fa fa-angle-down"></span>
-                          </a>
-                          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                              
-                              <a class="dropdown-item scroll" href="current-speakers.html">Current Speakers</a>
-                              <a class="dropdown-item scroll" href="Past-speakers.html">	Past Speakers</a>
-                            
+                              <a class="dropdown-item scroll" href="partners.html">Present Partners </a>
+                              <a class="dropdown-item scroll" href="valuable-partners.html">Past Partners</a>
                           </div>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link" href="gallary.html">Gallery</a>
+                          <a class="nav-link" href="gallary.html">  Gallery</a>
                       </li>
+                    
+                      <!-- <li class="nav-item">
+                          <a class="nav-link" href="career.html">Career</a>
+                      </li> -->
                      
                       <li class="nav-item">
-                          <a class="nav-link" href="contact.html">Contact</a>
+                          <a  class="nav-link " href="enquiry.html">Institutional Enquiry</a>
                       </li>
-                      <!-- <li class="nav-item">
-                          <a class="nav-link lb_register_btn" href="register.html">Register</a>
-                      </li> -->
+                      
                       <li class="nav-item">
-                          <a class="nav-link lb_register_btn" href="enquiry.html">enquiries</a>
+                          <a  class="nav-link " href="register.html"> Student Registration</a>
                       </li>
                       
                   </ul>
-                </div>
-
-            </nav>
-        </div>
-    </header>
+              </div>
+        
+          </nav>
+      </div>
+  </header>
     <!--/header-->
-  <div class="inner-banner">
-    <section class="w3l-breadcrumb text-left">
+  <div class="inner-banner" style="min-height: 80px;">
+    <!-- <section class="w3l-breadcrumb text-left">
       <div class="container">
         <ul class="breadcrumbs-custom-path">
           <li><a href="index.html">Home</a></li>
           <li class="active"><span class="fa fa-chevron-right mx-2" aria-hidden="true"></span> Upcoming Events</li>
         </ul>
       </div>
-    </section>
+    </section> -->
   </div>
   <!-- about page about section -->
     <div class="container">
-      <h1 class="text-center text-danger lb_top_highlight_text">Up coming Events</h1>
+      <h3 class="text-danger" style="font-size: 24px; font-weight: 600; margin-top: 30px;">Upcoming events </h3>
     </div>
     <div id="exTab1" class="container">
         
            <ul style="display: flex;justify-content:space-between;" class="lb_tab_wrap"  id="place-tabs" class="nav nav-pills ">
         <li class="active">
           <a href="#1a" data-toggle="tab">
-              <p class="text-center">
+              <!-- <p class="text-center">
                 <img class="tab_img"  src="assets/images/tumukur.jpg" alt="" />   
-              </p>
+              </p> -->
            
-            <h5 class=" text-danger">Tumkur</h5>
-            <h6><span class="text-danger">Date</span> : 11 -12 Dec 2021</h6>
-            <h6><span class="text-danger">Time</span> : 10AM - 7:00pm</h6>
+            <h5 class=" text-danger text-center">Tumkur</h5>
+            <h6><span class="text-danger">Venue</span> &nbsp; &nbsp; : Bandimane Kalyana Mantapa</h6>
+            <h6><span class="text-danger">Address</span> : BH Road, Near gubbi gate</h6> 
+            <h6><span class="text-danger"></span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Tumkur, Karnataka - 572107</h6> 
+            <h6><span class="text-danger">Date</span>&nbsp; &nbsp; &nbsp; &nbsp; : 11 & 12 Dec, 2021</h6>
+            <h6><span class="text-danger">Time</span>&nbsp; &nbsp; &nbsp;  &nbsp; : 10:00 a.m. - 07:00 p.m.</h6>
+            <h6 class="text-center"><span class="text-danger">Seminar schedule</span>  </h6>
+            <div class="text-center">
+              <p><a class="iframe" href="assets/Seminar-schedules/seminar-schedule.pdf">Day 1</a></p>
+            </div>
+
             
+            
+              <!-- <div class="row">
+                <div class="col"><a href="assets/Seminar-schedules/seminar-schedule.pdf" target="_blank"  class="btn btn-primary bg-danger ">Day 1 </a></p>
+                </div>
+                <div class="col"><a href="assets/Seminar-schedules/seminar-schedule.pdf" target="_blank"  class="btn btn-primary bg-danger ">Day 2</a></p>
+                </div>
+              </div> -->
           </a>
         </li>
         <li>
           <a href="#2a" data-toggle="tab">
             <div>
                 
-                <p class="text-center">
+                <!-- <p class="text-center">
                 <img class="tab_img"  src="assets/images/hubli.jpg" alt="" />   
-              </p>
+              </p> -->
            
-            <h5 class=" text-danger">Hubli</h5>
-            <h6><span class="text-danger">Date</span> : 11 -12 Dec 2021</h6>
-            <h6><span class="text-danger">Time</span> : 10AM - 7:00pm</h6>
-             
+              <h5 class=" text-danger text-center">Hubli</h5>
+              <h6><span class="text-danger">Venue</span> &nbsp; &nbsp; : Sri Srinivas Gardens </h6>
+              <h6><span class="text-danger">Address</span> : Kusugal Rd, Suncity Layout, Keshwapur</h6> 
+              <h6><span class="text-danger"></span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Hubli, Karnataka - 580023</h6> 
+              <h6><span class="text-danger">Date</span>&nbsp; &nbsp; &nbsp; &nbsp; : 11 & 12 Dec, 2021</h6>
+              <h6><span class="text-danger">Time</span>&nbsp; &nbsp; &nbsp;  &nbsp; : 10:00 a.m. - 07:00 p.m.</h6>
+              <h6><span class="text-danger">Seminar schedule</span>  </h6>
+
+              <!-- <div class="row">
+                <div class="col"><a href="assets/Seminar-schedules/seminar-schedule.pdf" target="_blank"  class="btn btn-primary bg-danger ">Day 1 </a></p>
+                </div>
+                <div class="col"><a href="assets/Seminar-schedules/seminar-schedule.pdf" target="_blank"  class="btn btn-primary bg-danger ">Day 2</a></p>
+                </div>
+              </div> -->
             </div>
           </a>
         </li>
@@ -173,13 +209,23 @@ Author URL: http://mysite.com
           <a href="#3a" data-toggle="tab">
             <div>
 
-                <p class="text-center">
+                <!-- <p class="text-center">
                 <img class="tab_img" src="assets/images/bangalore.jpeg" alt="" />   
-              </p>
+              </p> -->
            
-            <h5 class="text-danger">Bangalore</h5>
-            <h6><span class="text-danger">Date</span> : 04 -05 Dec 2022</h6>
-            <h6><span class="text-danger">Time</span> : 10AM - 7:00pm</h6>
+              <h5 class=" text-danger text-center">Bangalore</h5>
+              <h6><span class="text-danger">Venue</span> &nbsp; &nbsp; : NIMHANS Convention Centre</h6>
+              <h6><span class="text-danger">Address</span> : Hosur Main Road, Lakkasandra</h6> 
+              <h6><span class="text-danger"></span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Bengaluru, Karnataka 560029</h6> 
+              <h6><span class="text-danger">Date</span>&nbsp; &nbsp; &nbsp; &nbsp; : 11 & 12 Dec, 2021</h6>
+              <h6><span class="text-danger">Time</span>&nbsp; &nbsp; &nbsp;  &nbsp; : 10:00 a.m. - 07:00 p.m.</h6>
+              <h6><span class="text-danger">Seminar schedule</span>  </h6>
+              <div class="row">
+                <div class="col"><a href="assets/Seminar-schedules/seminar-schedule.pdf" target="_blank"  class="btn btn-primary bg-danger ">Day 1 </a></p>
+                </div>
+                <div class="col"><a href="assets/Seminar-schedules/seminar-schedule.pdf" target="_blank"  class="btn btn-primary bg-danger ">Day 2</a></p>
+                </div>
+              </div>
               
             </div>
           </a>
@@ -187,11 +233,11 @@ Author URL: http://mysite.com
         <!-- <li><a href="#4a" data-toggle="tab">Background color</a>
 			</li> -->
       </ul> 
-        </div>
-      
+        </div> 
+        <br>
 
-      <div style="margin-top: 200px;" class="tab-content clearfix ">
-        <div class="tab-pane active" id="1a">
+      <!-- <div style="margin-top: 200px;" class="tab-content clearfix ">
+        <div class="tab-pane active" id="1a"> -->
 <!-- <div>
    <img height="250px"  width="100%" src="assets/images/tabImg/tumukur.png" alt=""> 
 </div> -->
@@ -208,7 +254,7 @@ Author URL: http://mysite.com
 
 
           <!--New-->
-          <div id="exTab2" class="container">	
+          <!-- <div id="exTab2" class="container">	
               <div class="lb_inner_event_subtitle_event_wrap">
 
 <ul class="nav nav-tabs">
@@ -236,13 +282,13 @@ Author URL: http://mysite.com
                       height="80px"
                       src="assets/images/icona/unnamed.png"
                       alt=""
-                    />
+                    />-->
                     <!-- <a href="#" class="btn btn-primary btn-sm">Regester</a> -->
-                  </div>
+                  <!-- </div>
                   <div class="col-sm-8">
-                    <div class="card-block">
-                      <!--           <h4 class="card-title">Small card</h4> -->
-                      <h5>Past Present And <br> <span style="font-weight: bold;" class="text-danger">
+                    <div class="card-block"> -->
+                                <!-- <h4 class="card-title">Small card</h4> -->
+                      <!-- <h5>Past Present And <br> <span style="font-weight: bold;" class="text-danger">
                           Future Of Engineering
                       </span> </h5>
                       <h6>Date:<span class="text-danger">1<sup>st</sup> Dec 2021 </span> </h6>
@@ -294,9 +340,9 @@ Author URL: http://mysite.com
                
                   </div>
                   <div class="col-sm-8">
-                    <div class="card-block">
-                      <!--           <h4 class="card-title">Small card</h4> -->
-                      <h5>Past Present And <br> <span style="font-weight: bold;" class="text-danger">
+                    <div class="card-block"> -->
+                                <!-- <h4 class="card-title">Small card</h4> -->
+                      <!-- <h5>Past Present And <br> <span style="font-weight: bold;" class="text-danger">
                           Future Of Engineering
                       </span> </h5>
                       <h6>Date:<span class="text-danger">1<sup>st</sup> Dec 2021 </span> </h6>
@@ -321,9 +367,9 @@ Author URL: http://mysite.com
                    
                   </div>
                   <div class="col-sm-8">
-                    <div class="card-block">
-                      <!--           <h4 class="card-title">Small card</h4> -->
-                      <h5>Past Present And <br> <span style="font-weight: bold;" class="text-danger">
+                    <div class="card-block"> -->
+                                <!-- <h4 class="card-title">Small card</h4> -->
+                      <!-- <h5>Past Present And <br> <span style="font-weight: bold;" class="text-danger">
                           Future Of Engineering
                       </span> </h5>
                       <h6>Date:<span class="text-danger">1<sup>st</sup> Dec 2021 </span> </h6>
@@ -348,9 +394,9 @@ Author URL: http://mysite.com
                     
                   </div>
                   <div class="col-sm-8">
-                    <div class="card-block">
-                      <!--           <h4 class="card-title">Small card</h4> -->
-                      <h5>Past Present And <br> <span style="font-weight: bold;" class="text-danger">
+                    <div class="card-block"> -->
+                                <!-- <h4 class="card-title">Small card</h4> -->
+                      <!-- <h5>Past Present And <br> <span style="font-weight: bold;" class="text-danger">
                           Future Of Engineering
                       </span> </h5>
                       <h6>Date:<span class="text-danger">1<sup>st</sup> Dec 2021 </span> </h6>
@@ -375,9 +421,9 @@ Author URL: http://mysite.com
                  
                   </div>
                   <div class="col-sm-8">
-                    <div class="card-block">
-                      <!--           <h4 class="card-title">Small card</h4> -->
-                      <h5>Past Present And <br> <span style="font-weight: bold;" class="text-danger">
+                    <div class="card-block"> -->
+                                <!-- <h4 class="card-title">Small card</h4> -->
+                      <!-- <h5>Past Present And <br> <span style="font-weight: bold;" class="text-danger">
                           Future Of Engineering
                       </span> </h5>
                       <h6>Date:<span class="text-danger">1<sup>st</sup> Dec 2021 </span> </h6>
@@ -408,13 +454,13 @@ Author URL: http://mysite.com
                       height="80px"
                       src="assets/images/icona/unnamed.png"
                       alt=""
-                    />
+                    />-->
                     <!-- <a href="#" class="btn btn-primary btn-sm">Regester</a> -->
-                  </div>
+                  <!-- </div>
                   <div class="col-sm-8">
-                    <div class="card-block">
-                      <!--           <h4 class="card-title">Small card</h4> -->
-                      <h5>Past Present And <br> <span style="font-weight: bold;" class="text-danger">
+                    <div class="card-block"> -->
+                                <!-- <h4 class="card-title">Small card</h4> -->
+                      <!-- <h5>Past Present And <br> <span style="font-weight: bold;" class="text-danger">
                           Future Of Engineering
                       </span> </h5>
                       <h6>Date:<span class="text-danger">1<sup>st</sup> Dec 2021 </span> </h6>
@@ -466,9 +512,9 @@ Author URL: http://mysite.com
                
                   </div>
                   <div class="col-sm-8">
-                    <div class="card-block">
-                      <!--           <h4 class="card-title">Small card</h4> -->
-                      <h5>Past Present And <br> <span style="font-weight: bold;" class="text-danger">
+                    <div class="card-block"> --> 
+                                <!-- <h4 class="card-title">Small card</h4> -->
+                      <!-- <h5>Past Present And <br> <span style="font-weight: bold;" class="text-danger">
                           Future Of Engineering
                       </span> </h5>
                       <h6>Date:<span class="text-danger">1<sup>st</sup> Dec 2021 </span> </h6>
@@ -493,9 +539,9 @@ Author URL: http://mysite.com
                    
                   </div>
                   <div class="col-sm-8">
-                    <div class="card-block">
-                      <!--           <h4 class="card-title">Small card</h4> -->
-                      <h5>Past Present And <br> <span style="font-weight: bold;" class="text-danger">
+                    <div class="card-block"> -->
+                                <!-- <h4 class="card-title">Small card</h4> -->
+                      <!-- <h5>Past Present And <br> <span style="font-weight: bold;" class="text-danger">
                           Future Of Engineering
                       </span> </h5>
                       <h6>Date:<span class="text-danger">1<sup>st</sup> Dec 2021 </span> </h6>
@@ -517,14 +563,14 @@ Author URL: http://mysite.com
 				</div>
         
   </div>
-</div>
+</div> -->
           <!--New-->
           
-        </div>
-        <div class="tab-pane" id="2a">
+        <!-- </div>
+        <div class="tab-pane" id="2a"> -->
 
             <!--New Hubli-->
-            <div id="exTab2" class="container">	
+            <!-- <div id="exTab2" class="container">	
                 <div class="lb_inner_event_subtitle_event_wrap">
 <ul class="nav nav-tabs">
 			<li class="active lb_inner_event_subtitle">
@@ -553,11 +599,11 @@ Author URL: http://mysite.com
                       src="assets/images/icona/unnamed.png"
                       alt=""
                     />
-                    <!-- <a href="#" class="btn btn-primary btn-sm">Regester</a> -->
+                    <a href="#" class="btn btn-primary btn-sm">Regester</a>
                   </div>
                   <div class="col-sm-8">
                     <div class="card-block">
-                      <!--           <h4 class="card-title">Small card</h4> -->
+                                <h4 class="card-title">Small card</h4>
                       <h5>Past Present And <br> <span style="font-weight: bold;" class="text-danger">
                           Future Of Engineering
                       </span> </h5>
@@ -611,7 +657,7 @@ Author URL: http://mysite.com
                   </div>
                   <div class="col-sm-8">
                     <div class="card-block">
-                      <!--           <h4 class="card-title">Small card</h4> -->
+                                <h4 class="card-title">Small card</h4>
                       <h5>Past Present And <br> <span style="font-weight: bold;" class="text-danger">
                           Future Of Engineering
                       </span> </h5>
@@ -638,7 +684,7 @@ Author URL: http://mysite.com
                   </div>
                   <div class="col-sm-8">
                     <div class="card-block">
-                      <!--           <h4 class="card-title">Small card</h4> -->
+                                <h4 class="card-title">Small card</h4>
                       <h5>Past Present And <br> <span style="font-weight: bold;" class="text-danger">
                           Future Of Engineering
                       </span> </h5>
@@ -673,11 +719,11 @@ Author URL: http://mysite.com
                       src="assets/images/icona/unnamed.png"
                       alt=""
                     />
-                    <!-- <a href="#" class="btn btn-primary btn-sm">Regester</a> -->
+                    <a href="#" class="btn btn-primary btn-sm">Regester</a>
                   </div>
                   <div class="col-sm-8">
                     <div class="card-block">
-                      <!--           <h4 class="card-title">Small card</h4> -->
+                                <h4 class="card-title">Small card</h4>
                       <h5>Past Present And <br> <span style="font-weight: bold;" class="text-danger">
                           Future Of Engineering
                       </span> </h5>
@@ -731,7 +777,7 @@ Author URL: http://mysite.com
                   </div>
                   <div class="col-sm-8">
                     <div class="card-block">
-                      <!--           <h4 class="card-title">Small card</h4> -->
+                                <h4 class="card-title">Small card</h4>
                       <h5>Past Present And <br> <span style="font-weight: bold;" class="text-danger">
                           Future Of Engineering
                       </span> </h5>
@@ -755,17 +801,17 @@ Author URL: http://mysite.com
 				</div>
         
   </div>
-</div>
+</div> -->
             <!--New Hubli-->
-          <div>
+          <!-- <div>
             
 
-          </div>
+          </div> -->
           <!-- <h3>
             We use the class nav-pills instead of nav-tabs which automatically
             creates a background color for the tab
           </h3> -->
-        </div>
+        <!-- </div>
         <div class="tab-pane" id="3a">
           <div><div id="exTab2" class="container">	
               <div class="lb_inner_event_subtitle_event_wrap">
@@ -795,11 +841,11 @@ Author URL: http://mysite.com
                       src="assets/images/icona/unnamed.png"
                       alt=""
                     />
-                    <!-- <a href="#" class="btn btn-primary btn-sm">Regester</a> -->
+                    <a href="#" class="btn btn-primary btn-sm">Regester</a>
                   </div>
                   <div class="col-sm-8">
                     <div class="card-block">
-                      <!--           <h4 class="card-title">Small card</h4> -->
+                                <h4 class="card-title">Small card</h4>
                       <h5>Past Present And <br> <span style="font-weight: bold;" class="text-danger">
                           Future Of Engineering
                       </span> </h5>
@@ -853,7 +899,7 @@ Author URL: http://mysite.com
                   </div>
                   <div class="col-sm-8">
                     <div class="card-block">
-                      <!--           <h4 class="card-title">Small card</h4> -->
+                                <h4 class="card-title">Small card</h4>
                       <h5>Past Present And <br> <span style="font-weight: bold;" class="text-danger">
                           Future Of Engineering
                       </span> </h5>
@@ -880,7 +926,7 @@ Author URL: http://mysite.com
                   </div>
                   <div class="col-sm-8">
                     <div class="card-block">
-                      <!--           <h4 class="card-title">Small card</h4> -->
+                                <h4 class="card-title">Small card</h4>
                       <h5>Past Present And <br> <span style="font-weight: bold;" class="text-danger">
                           Future Of Engineering
                       </span> </h5>
@@ -907,7 +953,7 @@ Author URL: http://mysite.com
                   </div>
                   <div class="col-sm-8">
                     <div class="card-block">
-                      <!--           <h4 class="card-title">Small card</h4> -->
+                                <h4 class="card-title">Small card</h4>
                       <h5>Past Present And <br> <span style="font-weight: bold;" class="text-danger">
                           Future Of Engineering
                       </span> </h5>
@@ -934,7 +980,7 @@ Author URL: http://mysite.com
                   </div>
                   <div class="col-sm-8">
                     <div class="card-block">
-                      <!--           <h4 class="card-title">Small card</h4> -->
+                                <h4 class="card-title">Small card</h4>
                       <h5>Past Present And <br> <span style="font-weight: bold;" class="text-danger">
                           Future Of Engineering
                       </span> </h5>
@@ -967,11 +1013,11 @@ Author URL: http://mysite.com
                       src="assets/images/icona/unnamed.png"
                       alt=""
                     />
-                    <!-- <a href="#" class="btn btn-primary btn-sm">Regester</a> -->
+                    <a href="#" class="btn btn-primary btn-sm">Regester</a>
                   </div>
                   <div class="col-sm-8">
                     <div class="card-block">
-                      <!--           <h4 class="card-title">Small card</h4> -->
+                                <h4 class="card-title">Small card</h4>
                       <h5>Past Present And <br> <span style="font-weight: bold;" class="text-danger">
                           Future Of Engineering
                       </span> </h5>
@@ -1025,7 +1071,7 @@ Author URL: http://mysite.com
                   </div>
                   <div class="col-sm-8">
                     <div class="card-block">
-                      <!--           <h4 class="card-title">Small card</h4> -->
+                                <h4 class="card-title">Small card</h4>
                       <h5>Past Present And <br> <span style="font-weight: bold;" class="text-danger">
                           Future Of Engineering
                       </span> </h5>
@@ -1052,7 +1098,7 @@ Author URL: http://mysite.com
                   </div>
                   <div class="col-sm-8">
                     <div class="card-block">
-                      <!--           <h4 class="card-title">Small card</h4> -->
+                                <h4 class="card-title">Small card</h4>
                       <h5>Past Present And <br> <span style="font-weight: bold;" class="text-danger">
                           Future Of Engineering
                       </span> </h5>
@@ -1079,7 +1125,7 @@ Author URL: http://mysite.com
                   </div>
                   <div class="col-sm-8">
                     <div class="card-block">
-                      <!--           <h4 class="card-title">Small card</h4> -->
+                                <h4 class="card-title">Small card</h4>
                       <h5>Past Present And <br> <span style="font-weight: bold;" class="text-danger">
                           Future Of Engineering
                       </span> </h5>
@@ -1106,7 +1152,7 @@ Author URL: http://mysite.com
                   </div>
                   <div class="col-sm-8">
                     <div class="card-block">
-                      <!--           <h4 class="card-title">Small card</h4> -->
+                                <h4 class="card-title">Small card</h4>
                       <h5>Past Present And <br> <span style="font-weight: bold;" class="text-danger">
                           Future Of Engineering
                       </span> </h5>
@@ -1131,24 +1177,18 @@ Author URL: http://mysite.com
 
           </div>
         </div>
-      </div>
+      </div> -->
 
 
-<hr>
+
+      
+    </div>
    
 
-      <div style="margin-top: 40px;"><p class="text-center"><a style="width: 300px; font-size: 32px;" href="register.html" class="btn btn-primary ">Register </a></p>
-        <br>
-          <h5 class="text-center text-red">*Schedule is subject to change with prior notice</h5>
-          
-      </div>
+    <div style="margin-top: 150px; border-top: 1px solid #ccc;"><p class="text-center" style="margin-top: 30px;"><a href="register.html" class="btn btn-primary bg-danger ">Register now </a></p>
+      <br>
+        
     </div>
-
-    <br />
-    <br />
-
-
-
 
 
 
@@ -1176,124 +1216,141 @@ Author URL: http://mysite.com
 </div> -->
 
 
-
-
-
-  <!-- footer -->
-    <img height="80px" width="100%" src="assets/images/footerImg/three.png" alt="">
-    <section class="w3l-footer-29-main">
-        <div class="footer-29 py-5">
-            <div class="container py-lg-4">
-                <div class="row footer-top-29">
-                    <div class="col-lg-4 col-md-6 col-sm-7 footer-list-29 footer-1 pr-lg-5">
-                        <div class="footer-logo mb-3">
-                            <div style="display: flex;">
-                                
-                                <div>
-                                    <img width="150px" src="assets/images/footerImg/Footer-2.png" alt="">
-                                </div><div>
-                                  <img width="150px" src="assets/images/footerImg/two.png" alt="">  
-                                </div>
-                            </div>
+<!-- footer -->
+<img width="100%" src="assets/images/footerImg/three.png" alt="">
+<section class="w3l-footer-29-main">
+    <div class="footer-29 py-1">
+        <div class="container py-lg-4">
+            <div class="row footer-top-29">
+                <div class="col-lg-4 col-md-6 col-sm-7 footer-list-29 footer-1 pr-lg-5">
+                    <div class="footer-logo mb-3 text-center">
+                        <div style="display: flex;">
                             
+                            <div>
+                                <img width="80%" src="assets/images/footerImg/footer1.png" alt="">
+                            </div>
+                            <!-- <div>
+                              <img width="100%" src="assets/images/footerImg/footer2.png" alt="">  
+                            </div> -->
                         </div>
-                        <p>Lorem ipsum viverra feugiat. Pellen tesque libero ut justo, ultrices in ligula. Semper at
-                            tempufddfel. Lorem ipsum dolor sit amet Semper at elit.</p>
-                        <div class="main-social-footer-29 mt-4">
-                            <a href="https://www.facebook.com/CareerUttsav/" class="facebook"><span class="fa fa-facebook"></span></a>
-                            <a href="http://www.twitter.com/CareerUtsav
-" class="twitter"><span class="fa fa-twitter"></span></a>
-                            <a href="http://www.youtube.com/channel/UCgU4hSyfIP9xLnXe4TVoiRw" class="instagram"><span class="fa fa-youtube"></span></a>
-                            <a href="https://in.linkedin.com/in/careerutsav" class="linkedin"><span class="fa fa-linkedin"></span></a>
-                        </div>
+                        
                     </div>
-                    <div class="col-lg-2 col-md-6 col-sm-5 col-6 footer-list-29 footer-2 mt-sm-0 mt-5">
 
-                        <ul>
-                            <h6 class="footer-title-29">Usefull Links</h6>
-                            <li><a href="about.html">About Us</a></li>
-                            <li><a href="services.html">Courses</a></li>
-                            <li><a href="#pricing"> Pricing plans</a></li>
-                            <li><a href="#careers"> Careers</a></li>
-                            <li><a href="blog.html"> Blog posts</a></li>
-                            <li><a href="contact.html">Contact us</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-2 col-md-6 col-sm-5 col-6 footer-list-29 footer-3 mt-lg-0 mt-5">
-                        <h6 class="footer-title-29">More Info</h6>
-                        <ul>
-                            <li><a href="#profile">Profile</a></li>
-                            <li><a href="#vision">Vision & Values</a></li>
-                            <li><a href="#history">History</a></li>
-                            <li><a href="#leader">Leadership</a></li>
-                            <li><a href="#help">Help</a></li>
-                            <li><a href="#support"> Support</a></li>
-                        </ul>
-
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-7 footer-list-29 footer-4 mt-lg-0 mt-5">
-                        <h6 class="footer-title-29">Contact Info </h6>
-                        <p><strong>Address :</strong> Logo, 343 Honey Avenue street, NY - 62617.</p>
-                        <p class="my-2"><strong>Phone :</strong> <a href="tel:+12 23456799">+12 23456799</a></p>
-                        <p><strong>Email :</strong> <a href="mailto:info@example.com">info@example.com</a></p>
+                    <style>
+                        .fb{
+background-color: #3b5998 !important
+                        }
+                        .fb:hover{
+                          opacity: 0.7 !important;
+                        }
+                        .tw{
+                          background-color: #55acee !important
+                          
+                        }
+                        .tw:hover{
+                          opacity: 0.7;
+                        }
+                        .lind{
+                          background: #007bb5 !important;
+                        }
+                        .lind:hover{
+                          opacity: 0.7;
+                        }
+                        .yout{
+                          background: #bb0000 !important;
+                        }
+                        .yout:hover{
+                          opacity: 0.7;
+                        }
+                      </style>
+                    <div class="main-social-footer-29 mt-4 text-center">
+                        <a href="https://www.facebook.com/CareerUttsav/" class="facebook fb"><span  style="color:#fff" class="fa fa-facebook "></span></a>
+                        <a   href="http://www.twitter.com/CareerUtsav
+" class="twitter tw"><span style="color:#fff" class="fa fa-twitter"></span></a>
+                        <a href="http://www.youtube.com/channel/UCgU4hSyfIP9xLnXe4TVoiRw" class="instagram  yout"><span class="fa fa-1.5x fa-youtube text-white"></span></a>
+                        <a href="https://in.linkedin.com/in/careerutsav" class="linkedin lind"><span class="fa fa-linkedin text-white"></span></a>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-    <!-- //footer -->
+                <!-- <div class="col-lg-2 col-md-6 col-sm-5 col-6 footer-list-29 footer-3 mt-lg-0 mt-5">
+                    <h6 class="footer-title-29">More Info</h6>
+                    <ul>
+                        <li><a href="#profile">Profile</a></li>
+                        <li><a href="#vision">Vision & Values</a></li>
+                        <li><a href="#history">History</a></li>
+                        <li><a href="#leader">Leadership</a></li>
+                        <li><a href="#help">Help</a></li>
+                        <li><a href="#support"> Support</a></li>
+                    </ul>
 
-    <!-- copyright -->
-    <section class="w3l-copyright">
-        <div class="container">
-            <div class="row bottom-copies">
-                <p class="col-lg-8 copy-footer-29">© 2020 Logo. All rights reserved. Design by <a
-                        href="https://mysite.com/" target="_blank">
-                        mysite</a></p>
+                </div> -->
+                <div class="col-lg-5 col-md-6 col-sm-7 footer-list-29 footer-4 mt-lg-0 mt-5">
+                    <h6 class="footer-title-29">Contact Info </h6>
+                    <p><strong>K2 Learning Resources India [p] Ltd</strong> </p>
+                    <p><strong>Address : </strong>No. 200, 4<sup>th</sup> Main Road, Chamrajpet, <br> Bengaluru, India - 560018</p>
+                    <p class="my-2"><strong>Phone :</strong> <a href="tel:+919900795000">+91-9900795000 / +91-9900795111 </a></p>
+                    <p><strong>Email :</strong> <a href="mailto:info@careeruttsav.com">info@careeruttsav.com</a></p>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-5 col-6 footer-list-29 footer-2 mt-sm-0 mt-5">
 
-                <div class="col-lg-4 footer-list-29">
-                    <ul class="d-flex text-lg-right justify-content-center mt-lg-0 mt-3">
-                        <li><a href="#careers"> Careers</a></li>
-                        <li class="mx-lg-5 mx-md-4 mx-3"><a href="#privacymy-lg-0 my-4">Privacy Policy</a></li>
-                        <li><a href="contact.html">Contact us</a></li>
+                    <ul>
+                        <h6 class="footer-title-29">Usefull Links</h6>
+                        <li><a href="career.html"> Careers</a></li>
+                        <li><a href="blog.html"> Blog posts</a></li>
+                        <li><a href="contact.html">FaQ's</a></li>
                     </ul>
                 </div>
-
             </div>
         </div>
+    </div>
+</section>
+<!-- //footer -->
 
-        <!-- move top -->
-        <button onclick="topFunction()" id="movetop" title="Go to top">
-            &#10548;
-        </button>
-          <!-- move top -->
-        <button onclick="topFunction()" id="movetop" title="Go to top">
-            &#10548;
-        </button>
-        <script>
-            // When the user scrolls down 20px from the top of the document, show the button
-            window.onscroll = function () {
-                scrollFunction()
-            };
+<!-- copyright -->
+<section class="w3l-copyright">
+    <div class="container">
+        <div class="row bottom-copies text-center">
+            <p class="col-lg-12 copy-footer-29"> Copyright &copy; 2013-<script>document.write(new Date().getFullYear())</script> Career Uttsav - All Rights Reserved | Design by <a
+                href="https://rcsinfo.in/" target="_blank">
+                RCS Technology</a></p>
+            <!-- <div class="col-lg-4 footer-list-29">
+                <ul class="d-flex text-lg-right justify-content-center mt-lg-0 mt-3">
+                    <li><a href="#careers"> Careers</a></li>
+                    <li class="mx-lg-5 mx-md-4 mx-3"><a href="#privacymy-lg-0 my-4">Privacy Policy</a></li>
+                    <li><a href="contact.html">Contact us</a></li>
+                </ul>
+            </div> -->
 
-            function scrollFunction() {
-                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                    document.getElementById("movetop").style.display = "block";
-                } else {
-                    document.getElementById("movetop").style.display = "none";
-                }
+        </div>
+    </div>
+
+    <!-- move top -->
+    <button onclick="topFunction()" id="movetop" title="Go to top">
+        &#10548;
+    </button>
+    <script>
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () {
+            scrollFunction()
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("movetop").style.display = "block";
+            } else {
+                document.getElementById("movetop").style.display = "none";
             }
+        }
 
-            // When the user clicks on the button, scroll to the top of the document
-            function topFunction() {
-                document.body.scrollTop = 0;
-                document.documentElement.scrollTop = 0;
-            }
-        </script>
-        <!-- /move top -->
-      
-    </section>
-    <!-- //copyright -->
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+    <!-- /move top -->
+  
+</section>
+<!-- //copyright -->
 
     <script src="assets/js/jquery-3.3.1.min.js"></script> <!-- Common jquery plugin -->
 
@@ -1445,5 +1502,18 @@ Author URL: http://mysite.com
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+  <script>
+    $(document).ready(function() {
+    /* Apply fancybox to multiple items */
+
+    $("a.iframe").fancybox({
+    'width': 640, // or whatever you want
+    'height': 480, // or whatever you want
+    'type': 'iframe'
+    });
+
+    });
+    </script>
   </body>
 </html>
