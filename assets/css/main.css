@@ -16946,7 +16946,7 @@ div#small-dialog3 iframe {
 /*-- //play icon animation --*/
 
 .w3l-videohny .history-info {
-  background: url(../images/banner1.jpg) no-repeat center;
+  background: url(../images/vidbanner.jpg) no-repeat center;
   background-size: cover;
   -webkit-background-size: cover;
   -o-background-size: cover;
@@ -16958,6 +16958,7 @@ div#small-dialog3 iframe {
   align-items: center;
   min-height: 250px;
   border-radius: var(--border-radius-full);
+  margin-bottom: 20px;
 }
 .w3l-videohny .history-info:before {
   content: "";
@@ -16984,12 +16985,12 @@ div#small-dialog3 iframe {
 }
 .w3l-videohny span.video-play-icon {
   display: inline-block;
-  width: 80px;
-  height: 80px;
-  font-size: 26px;
+  width: 40px;
+  height: 40px;
+  font-size: 13px;
   padding-left: 2px;
   text-align: center;
-  line-height: 76px;
+  line-height: 40px;
   border-radius: 50%;
   transition: 0.3s ease-in-out;
   -webkit-animation: ripple 1s linear infinite;
